@@ -4,7 +4,7 @@ class Navbar extends React.Component {
   render() {
     return (
     <div style = {navStyle}>
-      test
+      <h1 style = {navHeaderStyle}>React Playground</h1>
     </div>
     )
   }
@@ -12,8 +12,14 @@ class Navbar extends React.Component {
 
 const navStyle: React.CSSProperties = {
   height: '10%',
-  width: '100vw',
-  backgroundColor: 'grey',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+
+}
+
+const navHeaderStyle: React.CSSProperties = {
 
 }
 export default Navbar

@@ -1,4 +1,11 @@
-body {
+* {
   margin: 0;
-  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif;
+  
+}
+
+body {
+background-color: '#2f4454';
 }
