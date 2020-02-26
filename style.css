@@ -6,6 +6,7 @@
   
 }
 
-body {
-background-color: '#2f4454';
+html, body, #root {
+  background-color: '#2f4454';
+  height: 100%;
 }

@@ -16,20 +16,22 @@ class SectionItem extends React.Component<Props> {
   }
 }
 const sectionItemStyle: React.CSSProperties = {
-  height: '30vh',
+  flexShrink: 1,
   position: 'relative',
-  margin: '0.5rem',
+  margin: '0.4rem',
   backgroundColor: '#2f4454',
 }
 const imageStyle: React.CSSProperties = {
   width: '100%',
-  height: '28vh',
+  height: '30vh',
   objectFit: 'cover',
   backgroundColor: '#2f4454',
 }
 const textStyle: React.CSSProperties = {
  
 zIndex: 100,
+fontSize: '3rem',
+color: 'grey',
  position: 'absolute',
  left: '50%',
  top: '50%',

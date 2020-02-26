@@ -13,8 +13,9 @@ class Content extends React.Component {
   }
 }
 const contentStyle: React.CSSProperties = {
-  height: '90%',
-  width: '100vw',
+  display: 'flex',
+  flexDirection: "column",
+  // width: '100vw',
   backgroundColor: '#2f4454',
  
 

@@ -3,10 +3,17 @@ import Navbar from "./navbar";
 import Content from "./content"
 
 class Layout extends React.Component {
+
+  componentDidMount() {
+    window.addEventListener('resize', () => {
+      window.innerWidth
+    })
+  }
+
   render() {
     return (
       <div style={ LayoutStyle }>
-        <Navbar/>
+        <Navbar />
         <Content/>
       </div>
     )
@@ -14,8 +21,7 @@ class Layout extends React.Component {
 }
 
 const LayoutStyle: React.CSSProperties = {
-  height: '100%',
-  width: '100%',
+  
   backgroundColor: '#2f4454',
 
 }
