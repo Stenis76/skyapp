@@ -1,15 +1,18 @@
 import React from "react";
 
 interface Props {
+  view: string
   text: string
   imageSource: string
+  onClick: (view: string) => void
 }
 
 class NavigationItem extends React.Component<Props> {
+  onClick = () => this.props.onClick(this.props.view)
   render() {
     return (
       <div style={sectionItemStyle}>
-        <img style={imageStyle} src={this.props.imageSource} alt="NONONO"/>
+        <img onClick={this.onClick} style={imageStyle} src={this.props.imageSource} alt="NONONO"/>
     <h1 style= {textStyle} >{this.props.text}</h1>
       </div>
     )

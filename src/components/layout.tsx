@@ -7,27 +7,33 @@ interface Props {
 
 }
 interface State {
-  view: "main" | "forest" | "sky" | "desert"
+  view: ViewType
 }
+
+type ViewType = "main" | "forest" | "sky" | "desert"
 
 class Layout extends React.Component<Props, State> {
 constructor(props: Props) {
   super(props)  
   this.state = {
-      view: "main"
+      view: "sky"
   }
 
   }
 
-  navigateToMain() {
-    alert('test')
+  navigateToMain = () => {
+    this.setState({view: 'main'})
   }
-
+  navigateToDetailView = (view: ViewType) => {
+    this.setState({view: view})
+  }
   render() {
+    console.log(this.state);
+    
     return (
       <div style={ LayoutStyle }>
         <Navbar onClickHeader={this.navigateToMain} />
-        <ViewContainer/>
+        <ViewContainer view={this.state.view}/>
       </div>
     )
   }   
