@@ -1,47 +1,39 @@
-import React from "react";
-import Navbar from "./navbar";
-import { ViewContainer } from "./viewcontainer"
+import React, { Component, CSSProperties } from 'react';
+import Navbar from './navbar';
+import ViewContainer from './viewContainer/viewContainer';
+import { fullScreen } from '../css';
 
-
-interface Props {
-
-}
+interface Props {}
 interface State {
-  view: ViewType
+    currentView: string
 }
 
-type ViewType = "main" | "forest" | "sky" | "desert"
+/** React class component */
+export default class Layout extends Component<Props, State> {
 
-class Layout extends React.Component<Props, State> {
-constructor(props: Props) {
-  super(props)  
-  this.state = {
-      view: "sky"
-  }
+    state = {
+        currentView: ''
+    };
 
-  }
+    setView = (view: string) => {
+        this.setState({ currentView: view });
+    }
 
-  navigateToMain = () => {
-    this.setState({view: 'main'})
-  }
-  navigateToDetailView = (view: ViewType) => {
-    this.setState({view: view})
-  }
-  render() {
-    console.log(this.state);
-    
-    return (
-      <div style={ LayoutStyle }>
-        <Navbar onClickHeader={this.navigateToMain} />
-        <ViewContainer view={this.state.view}/>
-      </div>
-    )
-  }   
+    render() {
+        return (
+            <div style={{ ...columnFlex, ...fullScreen, ...background }}>
+                <Navbar onViewSelected={this.setView}/>
+                <ViewContainer currentView={this.state.currentView} onViewSelected={this.setView}/>
+            </div>
+        );
+    }
 }
 
-const LayoutStyle: React.CSSProperties = {
-  
-  backgroundColor: '#2f4454',
+const columnFlex: CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+};
 
+const background: CSSProperties = {
+    background: '#1f1f1f'
 }
-export default Layout

@@ -1,10 +1,11 @@
-import * as React from "react";
+import React from 'react';
 import Layout from './layout';
 
+/**
+ * Application top level component. This is a good place for future
+ * top level components - ErrorBoundary, Provider & Suspense, etc.
+ */
+export default function App() {
 
-export default class App extends React.Component{
-  render() {
-    return <Layout/>
-  }
+    return <Layout/>;
 }
-

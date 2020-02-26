@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <title>SKYAPP</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>React Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        html, body, body > div {
+            height: 100%;
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
 </head>
 <body>
-  <div id="root"></div>
+    <div id="app-container"></div>
 
-   <!-- Dependencies -->
-   <script src="./node_modules/react/umd/react.development.js"></script>
-   <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+    <!-- Dependencies -->
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
 
-   <!-- Main -->
-   <script src="./dist/main.js"></script>
+    <!-- Main -->
+    <script src="./dist/bundle.js"></script>
 </body>
 </html>
