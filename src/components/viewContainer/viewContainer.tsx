@@ -1,20 +1,22 @@
 import React, { CSSProperties, Fragment } from 'react';
 import DetialView from './detailView';
 import MasterView from './masterView';
+import { Switch, Route } from 'react-router-dom';
+import DetailView from './detailView';
 
-interface Props {
-    currentView: string;
-    onViewSelected: (view: string) => void;
-}
 
 /** React function component */
-export default function ViewContainer(props: Props) {
+export default function ViewContainer() {
 
     const detailViews = ['forest', 'sky', 'desert'];
 
-    if (props.currentView === '') {
-        return <MasterView detailViews={detailViews} onDetaltViewSelected={props.onViewSelected}/>
-    } else {
-        return <DetialView id={props.currentView}/>
-    }
+
+return (
+    <Switch>
+        <Route exact path="/">
+            <MasterView/>
+        </Route>
+        <Route path="/" component={DetailView}/>
+    </Switch>
+)
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import Layout from './layout';
 
 /**
@@ -7,5 +8,9 @@ import Layout from './layout';
  */
 export default function App() {
 
-    return <Layout/>;
+    return (
+        <BrowserRouter>
+        <Layout/>;
+        </BrowserRouter>
+    )
 }

@@ -3,27 +3,15 @@ import Navbar from './navbar';
 import ViewContainer from './viewContainer/viewContainer';
 import { fullScreen } from '../css';
 
-interface Props {}
-interface State {
-    currentView: string
-}
 
 /** React class component */
-export default class Layout extends Component<Props, State> {
-
-    state = {
-        currentView: ''
-    };
-
-    setView = (view: string) => {
-        this.setState({ currentView: view });
-    }
+export default class Layout extends Component {
 
     render() {
         return (
             <div style={{ ...columnFlex, ...fullScreen, ...background }}>
-                <Navbar onViewSelected={this.setView}/>
-                <ViewContainer currentView={this.state.currentView} onViewSelected={this.setView}/>
+                <Navbar />
+                <ViewContainer />
             </div>
         );
     }

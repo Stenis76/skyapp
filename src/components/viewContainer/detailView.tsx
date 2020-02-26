@@ -1,13 +1,13 @@
 import React, { CSSProperties } from 'react';
 import { fullscreenAbsolute } from '../../css';
+import {RouteComponentProps} from 'react-router-dom'
 
-interface Props {
-    id: string
+interface Props extends RouteComponentProps {
 }
 
 export default function DetailView(props: Props) {
     
-    const imageSrc = `../assets/${props.id}.jpg`;
+    const imageSrc = `../assets/${props.location.pathname}.jpg`;
 
     return (
         <div style={container}>

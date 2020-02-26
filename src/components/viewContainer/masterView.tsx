@@ -1,17 +1,15 @@
 import React, { CSSProperties } from 'react';
 import NavigationItem from './navigationItem';
 
-interface Props {
-    detailViews: string[]
-    onDetaltViewSelected: (view: string) => void;
-}
+
 
 /** React function component */
-export default function MasterView(props: Props) {
+export default function MasterView() {
+        const detailViews = ['forest', 'sky', 'desert']
 
     return (
         <div style={container}>
-            {props.detailViews.map((value) => <NavigationItem id={value} onClick={props.onDetaltViewSelected} />)}
+            {detailViews.map((value) => <NavigationItem id={value} key={value}  />)}
         </div>
     );
 }

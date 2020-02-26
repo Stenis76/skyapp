@@ -1,18 +1,14 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, Props } from 'react';
+import { Link} from "react-router-dom"
 
-interface Props {
-    onViewSelected: (view: string) => void
-}
+
 /** React function component */
-export default function Navbar(props: Props) {
-
-    const onClickHeader = () => {
-        props.onViewSelected('');
-    }
+export default function Navbar() {
 
     return (
+
         <div style={navbar}>
-            <h1 onClick={onClickHeader} style={navbarItem}>React Playground</h1>
+         <Link to="/"  style={navbarItem}>React Playground</Link>
         </div>
     );
 }
@@ -32,5 +28,6 @@ const navbarItem: CSSProperties = {
     padding: 0,
     display: 'flex',
     alignItems: 'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    textDecoration: 'none',
 };
