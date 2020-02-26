@@ -1,20 +1,33 @@
 import React from "react";
 import Navbar from "./navbar";
-import Content from "./content"
+import { ViewContainer } from "./viewcontainer"
 
-class Layout extends React.Component {
 
-  componentDidMount() {
-    window.addEventListener('resize', () => {
-      window.innerWidth
-    })
+interface Props {
+
+}
+interface State {
+  view: "main" | "forest" | "sky" | "desert"
+}
+
+class Layout extends React.Component<Props, State> {
+constructor(props: Props) {
+  super(props)  
+  this.state = {
+      view: "main"
+  }
+
+  }
+
+  navigateToMain() {
+    alert('test')
   }
 
   render() {
     return (
       <div style={ LayoutStyle }>
-        <Navbar />
-        <Content/>
+        <Navbar onClickHeader={this.navigateToMain} />
+        <ViewContainer/>
       </div>
     )
   }   

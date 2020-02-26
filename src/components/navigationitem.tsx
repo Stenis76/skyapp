@@ -5,7 +5,7 @@ interface Props {
   imageSource: string
 }
 
-class SectionItem extends React.Component<Props> {
+class NavigationItem extends React.Component<Props> {
   render() {
     return (
       <div style={sectionItemStyle}>
@@ -41,4 +41,4 @@ color: 'grey',
 }
 
 
-export default SectionItem
+export default NavigationItem
